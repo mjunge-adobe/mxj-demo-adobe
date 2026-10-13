@@ -119,10 +119,10 @@ export default async function decorate(block) {
   const brandAnchor = navBrand.querySelector('a');
   if (brandAnchor && !brandAnchor.querySelector('img')) {
     const logo = document.createElement('img');
-    logo.src = `${window.hlx.codeBasePath}/icons/logo.png`;
+    logo.src = `${window.hlx.codeBasePath}/icons/we-healthcare-logo.png`;
     logo.alt = brandAnchor.textContent.trim() || 'we.Healthcare';
-    logo.width = 515;
-    logo.height = 140;
+    logo.width = 531;
+    logo.height = 156;
     brandAnchor.replaceChildren(logo);
   }
 
