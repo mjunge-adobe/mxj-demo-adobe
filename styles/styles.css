@@ -19,7 +19,7 @@
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
   --button-color: #00c4ff;
-  --button-text-color: #192a61;
+  --button-text-color: #fff;
   --button-hover-color: #192a61;
   --button-hover-text-color: #fff;
 
@@ -41,7 +41,7 @@
   --heading-font-size-xs: 22px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 80px;
 
   /* vertical space between sections */
   --section-spacing: 64px;
@@ -238,7 +238,7 @@ a.button.secondary,
 button.button.secondary {
   border-color: var(--button-color);
   background-color: transparent;
-  color: var(--button-text-color);
+  color: var(--button-hover-color);
 }
 
 a.button.secondary:hover,
