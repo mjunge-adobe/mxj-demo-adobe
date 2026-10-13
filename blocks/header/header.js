@@ -115,6 +115,17 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // show the logo image in place of the brand text
+  const brandAnchor = navBrand.querySelector('a');
+  if (brandAnchor && !brandAnchor.querySelector('img')) {
+    const logo = document.createElement('img');
+    logo.src = `${window.hlx.codeBasePath}/icons/logo.png`;
+    logo.alt = brandAnchor.textContent.trim() || 'we.Healthcare';
+    logo.width = 515;
+    logo.height = 140;
+    brandAnchor.replaceChildren(logo);
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
