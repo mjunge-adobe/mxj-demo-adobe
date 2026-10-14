@@ -3,5 +3,5 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 Fix #<gh-issue-id>
 
 Test URLs:
-- Before: https://main--mxj-demo-adobe--mjunge-adobe.aem.live/
-- After: https://<branch>--mxj-demo-adobe--mjunge-adobe.aem.live/
+- Before: https://main--we-healthcare-mxj--mjunge-adobe.aem.live/
+- After: https://<branch>--we-healthcare-mxj--mjunge-adobe.aem.live/
