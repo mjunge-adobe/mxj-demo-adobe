@@ -119,11 +119,7 @@ export default async function decorate(block) {
   const brandAnchor = navBrand.querySelector('a');
   if (brandAnchor && !brandAnchor.querySelector('img')) {
     const logo = document.createElement('img');
-    // the Health Sense demo page uses a green version of the logo square
-    const logoFile = /^\/health-sense\/?$/.test(window.location.pathname)
-      ? 'we-healthcare-logo-green.png'
-      : 'we-healthcare-logo.png';
-    logo.src = `${window.hlx.codeBasePath}/icons/${logoFile}`;
+    logo.src = `${window.hlx.codeBasePath}/icons/we-healthcare-logo.png`;
     logo.alt = brandAnchor.textContent.trim() || 'we.Healthcare';
     logo.width = 531;
     logo.height = 156;
