@@ -165,6 +165,10 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    // page-specific theme for the Health Sense demo page
+    if (/^\/health-sense\/?$/.test(window.location.pathname)) {
+      await loadCSS(`${window.hlx.codeBasePath}/styles/health-sense.css`);
+    }
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
