@@ -209,6 +209,32 @@ main .hs-hero .columns > div > div:not(.columns-img-col) {
   }
 }
 
+/* image-only hero (a single banner image): show it edge to edge at its natural shape */
+main > .section.hs-hero:has(.columns-1-cols) {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: none;
+}
+
+main > .section.hs-hero:has(.columns-1-cols) > div {
+  max-width: none;
+  padding: 0;
+}
+
+main .hs-hero .columns-1-cols .columns-img-col {
+  position: static;
+}
+
+main .hs-hero .columns-1-cols .columns-img-col picture,
+main .hs-hero .columns-1-cols .columns-img-col img {
+  height: auto;
+}
+
+main .hs-hero .columns-1-cols .columns-img-col::after {
+  content: none;
+}
+
 main .hs-hero h1 {
   color: #fff;
   font-size: clamp(38px, 4.6vw, 58px);
