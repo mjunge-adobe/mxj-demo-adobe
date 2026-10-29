@@ -154,7 +154,7 @@ main .hs-hero {
 main > .section.hs-hero {
   display: flex;
   align-items: center;
-  min-height: 520px;
+  min-height: 416px;
 }
 
 main > .section.hs-hero > div {
@@ -197,7 +197,7 @@ main .hs-hero .columns > div > div:not(.columns-img-col) {
 
 @media (width >= 900px) {
   main > .section.hs-hero {
-    min-height: 600px;
+    min-height: 480px;
   }
 
   main .hs-hero .columns-img-col::after {
@@ -229,6 +229,13 @@ main .hs-hero .columns-1-cols .columns-img-col {
 main .hs-hero .columns-1-cols .columns-img-col picture,
 main .hs-hero .columns-1-cols .columns-img-col img {
   height: auto;
+}
+
+/* 20% shorter than the banner's natural 3:1 shape, still full width */
+main .hs-hero .columns-1-cols .columns-img-col img {
+  aspect-ratio: 15 / 4;
+  object-fit: cover;
+  object-position: center;
 }
 
 main .hs-hero .columns-1-cols .columns-img-col::after {
@@ -294,7 +301,13 @@ main .hs-stats {
 }
 
 main > .section.hs-stats {
-  padding: 48px 0;
+  padding: 72px 0;
+}
+
+@media (width >= 900px) {
+  main > .section.hs-stats {
+    padding: 88px 0;
+  }
 }
 
 main .hs-stats .columns > div {
