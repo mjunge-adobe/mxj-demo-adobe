@@ -2,8 +2,10 @@
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
-  z-index: 2;
+  z-index: 10;
   position: fixed;
+  top: 0;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
 }
 
 header nav {
@@ -32,7 +34,8 @@ header nav[aria-expanded='true'] {
 
 @media (width >= 900px) {
   header .nav-wrapper {
-    position: relative;
+    position: fixed;
+    top: 0;
   }
 
   header nav {
