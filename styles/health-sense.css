@@ -143,10 +143,96 @@ main [class*='hs-'] p:not(.button-wrapper) > a:only-child:hover {
   text-decoration: underline;
 }
 
-/* ---------- hero: navy → blue gradient ---------- */
+/* ---------- hero: full-width image banner ---------- */
 main .hs-hero {
-  background: linear-gradient(120deg, var(--hs-navy) 0%, #1d0fb0 45%, var(--hs-blue) 100%);
+  position: relative;
+  overflow: hidden;
+  background: var(--hs-navy);
   color: #fff;
+}
+
+main > .section.hs-hero {
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+}
+
+main > .section.hs-hero > div {
+  width: 100%;
+}
+
+/* the image column becomes the banner background */
+main .hs-hero .columns-img-col {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+main .hs-hero .columns-img-col picture,
+main .hs-hero .columns-img-col img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+main .hs-hero .columns-img-col img {
+  object-fit: cover;
+  object-position: 70% center;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* navy fade so the text stays readable over the photo */
+main .hs-hero .columns-img-col::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(17 0 129 / 55%) 0%, rgb(17 0 129 / 88%) 100%);
+}
+
+main .hs-hero .columns > div > div:not(.columns-img-col) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (width >= 900px) {
+  main > .section.hs-hero {
+    min-height: 600px;
+  }
+
+  main .hs-hero .columns-img-col::after {
+    background: linear-gradient(90deg, rgb(17 0 129 / 95%) 0%, rgb(17 0 129 / 82%) 38%, rgb(17 0 129 / 20%) 68%, rgb(17 0 129 / 0%) 100%);
+  }
+
+  main .hs-hero .columns > div > div:not(.columns-img-col) {
+    flex: 0 1 600px;
+  }
+}
+
+/* image-only hero (a single banner image): show it edge to edge at its natural shape */
+main > .section.hs-hero:has(.columns-1-cols) {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: none;
+}
+
+main > .section.hs-hero:has(.columns-1-cols) > div {
+  max-width: none;
+  padding: 0;
+}
+
+main .hs-hero .columns-1-cols .columns-img-col {
+  position: static;
+}
+
+main .hs-hero .columns-1-cols .columns-img-col picture,
+main .hs-hero .columns-1-cols .columns-img-col img {
+  height: auto;
+}
+
+main .hs-hero .columns-1-cols .columns-img-col::after {
+  content: none;
 }
 
 main .hs-hero h1 {
@@ -190,16 +276,7 @@ main .hs-hero p:not(.button-wrapper) > a:only-child {
   color: #fff;
 }
 
-main .hs-hero .columns-img-col img {
-  border-radius: var(--hs-radius) var(--hs-radius) var(--hs-radius) 120px;
-  box-shadow: 0 24px 60px rgb(0 0 0 / 25%);
-}
-
 @media (width >= 900px) {
-  main .hs-hero .columns > div {
-    gap: 64px;
-  }
-
   main .hs-hero .button-wrapper {
     display: inline-block;
     margin-right: 24px;
