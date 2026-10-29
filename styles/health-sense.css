@@ -1,6 +1,6 @@
 /*
  * Health Sense page theme.
- * Loaded only on /health-sense (see scripts/scripts.js).
+ * Loaded only on /health-sense (see loadEager in scripts/scripts.js).
  * Every rule is scoped to the page's .hs-* sections or to main, so no other page is affected.
  */
 

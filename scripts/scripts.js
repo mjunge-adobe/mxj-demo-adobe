@@ -165,7 +165,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
-    // page-specific theme for the Health Sense demo page
+    // page-specific theme for the Health Sense demo page (styles/health-sense.css)
     if (/^\/health-sense\/?$/.test(window.location.pathname)) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/health-sense.css`);
     }
